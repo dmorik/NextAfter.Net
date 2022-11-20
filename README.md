@@ -20,3 +20,5 @@ The utility guarantees the following behavior:
 6. when getting previous representable numbers
  before `0` will return `-float.Epsilon` and `-double.Epsilon` respectively
 7. in other cases, when receiving the next number representable in floating-point arithmetic, a number that is strictly greater than the specified one will be returned, when receiving the previous number — strictly less, respectively (it is also guaranteed that between the original number and the result of the utility's calculations there are no other numbers representable in floating point arithmetic)
+
+The behavior described above is guaranteed as described in the utility tests.
