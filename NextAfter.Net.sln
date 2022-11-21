@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextAfter.Net", "NextAfter.Net\NextAfter.Net.csproj", "{877207D2-EF0B-4F6E-A552-8632D116107C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextAfter.Net.Testing", "NextAfter.Net.Testing\NextAfter.Net.Testing.csproj", "{27BAA327-6865-4594-A141-F4D0CB7135ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{877207D2-EF0B-4F6E-A552-8632D116107C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{877207D2-EF0B-4F6E-A552-8632D116107C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{877207D2-EF0B-4F6E-A552-8632D116107C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27BAA327-6865-4594-A141-F4D0CB7135ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27BAA327-6865-4594-A141-F4D0CB7135ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27BAA327-6865-4594-A141-F4D0CB7135ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27BAA327-6865-4594-A141-F4D0CB7135ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
