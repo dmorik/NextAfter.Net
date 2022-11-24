@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/dmorik/NextAfter.Net</projectUrl>
+	<repository type="git" url="https://github.com/dmorik/NextAfter.Net"/>
+    <description>$description$</description>
+    <releaseNotes>First Nuget utility version.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>Math Double Float NextAfter NextAfterF</tags>
+	<readme>README.md</readme>
+  </metadata>
+  <files>
+    <file src="README.md"/>
+  </files>
+</package>
