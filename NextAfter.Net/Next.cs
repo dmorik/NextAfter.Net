@@ -2,6 +2,9 @@
 
 namespace NextAfter.Net
 {
+    /// <summary>
+    /// The class that allows to get the next representable numbers in floating point arithmetic.
+    /// </summary>
     public static class Next
     {
         /// <summary>

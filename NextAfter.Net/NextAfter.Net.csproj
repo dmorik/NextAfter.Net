@@ -18,6 +18,7 @@
     <PackageProjectUrl>https://github.com/dmorik/NextAfter.Net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dmorik/NextAfter.Net</RepositoryUrl>
     <PackageTags>Math Double Float NextAfter NextAfterF</PackageTags>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

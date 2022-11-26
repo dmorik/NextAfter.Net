@@ -1,5 +1,8 @@
 ﻿namespace NextAfter.Net
 {
+    /// <summary>
+    /// The class that allows to get the previous representable numbers in floating point arithmetic.
+    /// </summary>
     public static class Previous
     {
         /// <summary>
