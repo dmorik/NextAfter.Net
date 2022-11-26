@@ -1,12 +1,11 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 // ReSharper disable CompareOfFloatsByEqualityOperator
 
-namespace NextAfter.Net.Tests
+namespace NextAfter.Net.Testing
 {
     [TestFixture]
-    internal class Double : Base
+    internal sealed class TestDouble : TestBase
     {
         [Test]
         public void Next_Zero()
@@ -140,7 +139,7 @@ namespace NextAfter.Net.Tests
         [Repeat(RepeatCount)]
         public void Prev_CommonNumbers()
         {
-            var number = GenerateNumber();
+            var number = GenerateDoubleNumber();
             var result = Previous.Double(number);
 
             Assert.IsTrue(result < number);
@@ -154,7 +153,7 @@ namespace NextAfter.Net.Tests
         [Repeat(RepeatCount)]
         public void Next_CommonNumbers()
         {
-            var number = GenerateNumber();
+            var number = GenerateDoubleNumber();
             var result = Next.Double(number);
 
             Assert.IsTrue(result > number);
@@ -162,19 +161,6 @@ namespace NextAfter.Net.Tests
             var middle = (number + result) * 0.5;
             
             Assert.IsTrue(middle == number || middle == result);
-        }
-
-        private static readonly double _minLogValue = Math.Log(double.Epsilon) + 1.0;
-        private static readonly double _maxLogValue = Math.Log(double.MaxValue) - 1.0;
-        
-        private static double GenerateNumber()
-        {
-            var numberSign = Random.NextDouble() >= 0.5 ? 1.0 : -1.0;
-            var randomNumber = Random.NextDouble();
-            var numberLogValue = _minLogValue * (1.0 - randomNumber) + _maxLogValue * randomNumber;
-            var numberAbsValue = Math.Exp(numberLogValue);
-            
-            return numberSign * numberAbsValue;
         }
     }
 }
