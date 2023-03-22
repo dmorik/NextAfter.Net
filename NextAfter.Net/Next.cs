@@ -1,4 +1,7 @@
-﻿using System;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System;
 
 namespace NextAfter.Net
 {
@@ -17,7 +20,7 @@ namespace NextAfter.Net
             if (double.IsNaN(number) || double.IsInfinity(number))
                 return number;
 
-            if (number == 0.0)
+            if (number.Equals(0.0))
                 return double.Epsilon;
 
             var result = number >= 0.0
@@ -37,7 +40,7 @@ namespace NextAfter.Net
             if (float.IsNaN(number) || float.IsInfinity(number))
                 return number;
 
-            if (number == 0.0)
+            if (number.Equals(0.0f))
                 return float.Epsilon;
 
             var result = number >= 0.0

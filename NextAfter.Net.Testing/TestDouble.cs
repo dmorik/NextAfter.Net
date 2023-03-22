@@ -1,6 +1,7 @@
-﻿using NUnit.Framework;
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-// ReSharper disable CompareOfFloatsByEqualityOperator
+using NUnit.Framework;
 
 namespace NextAfter.Net.Testing
 {
@@ -12,7 +13,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Double(0.0);
 
-            Assert.IsTrue(result == double.Epsilon);
+            Assert.IsTrue(result.Equals(double.Epsilon));
         }
 
         [Test]
@@ -20,7 +21,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Double(0.0);
 
-            Assert.IsTrue(result == -double.Epsilon);
+            Assert.IsTrue(result.Equals(-double.Epsilon));
         }
 
         [Test]
@@ -36,7 +37,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Double(double.Epsilon);
 
-            Assert.IsTrue(result == 0.0);
+            Assert.IsTrue(result.Equals(0.0));
         }
 
         [Test]
@@ -44,7 +45,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Double(double.MaxValue);
 
-            Assert.IsTrue(result == double.PositiveInfinity);
+            Assert.IsTrue(result.Equals(double.PositiveInfinity));
         }
         
         [Test]
@@ -60,7 +61,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Double(double.MinValue);
 
-            Assert.IsTrue(result == double.NegativeInfinity);
+            Assert.IsTrue(result.Equals(double.NegativeInfinity));
         }
         
         [Test]
@@ -124,7 +125,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Double(-double.Epsilon);
 
-            Assert.IsTrue(result == 0.0);
+            Assert.IsTrue(result.Equals(0.0));
         }
         
         [Test]
@@ -146,7 +147,7 @@ namespace NextAfter.Net.Testing
             
             var middle = (number + result) * 0.5;
             
-            Assert.IsTrue(middle == number || middle == result);
+            Assert.IsTrue(middle.Equals(number) || middle.Equals(result));
         }
 
         [Test]
@@ -160,7 +161,7 @@ namespace NextAfter.Net.Testing
 
             var middle = (number + result) * 0.5;
             
-            Assert.IsTrue(middle == number || middle == result);
+            Assert.IsTrue(middle.Equals(number) || middle.Equals(result));
         }
     }
 }

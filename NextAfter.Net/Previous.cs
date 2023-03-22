@@ -1,4 +1,7 @@
-﻿namespace NextAfter.Net
+﻿// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+namespace NextAfter.Net
 {
     /// <summary>
     /// The class that allows to get the previous representable numbers in floating point arithmetic.
