@@ -33,7 +33,7 @@ namespace NextAfter.Net.Testing
         }
         
         [Test]
-        public void Prev_Epsilon()
+        public void Prev_PlusEpsilon()
         {
             var result = Previous.Single(float.Epsilon);
 
@@ -129,7 +129,7 @@ namespace NextAfter.Net.Testing
         }
         
         [Test]
-        public void Next_Epsilon()
+        public void Next_PlusEpsilon()
         {
             var result = Next.Single(float.Epsilon);
 

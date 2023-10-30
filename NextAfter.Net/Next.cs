@@ -11,7 +11,7 @@ namespace NextAfter.Net
     public static class Next
     {
         /// <summary>
-        /// Returns the next representable double number.
+        /// Returns the next floating-point representable double number.
         /// </summary>
         /// <param name="number">Double number.</param>
         /// <returns>The next representable double number.</returns>
@@ -31,7 +31,7 @@ namespace NextAfter.Net
         }
         
         /// <summary>
-        /// Returns the next representable single number.
+        /// Returns the next floating-point representable single number.
         /// </summary>
         /// <param name="number">Single number.</param>
         /// <returns>The next representable single number.</returns>

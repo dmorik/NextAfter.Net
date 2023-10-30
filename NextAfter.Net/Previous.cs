@@ -9,7 +9,7 @@ namespace NextAfter.Net
     public static class Previous
     {
         /// <summary>
-        /// Returns the previous representable double number.
+        /// Returns the previous floating-point representable double number.
         /// </summary>
         /// <param name="number">Double number.</param>
         /// <returns>The previous representable double number.</returns>
@@ -19,7 +19,7 @@ namespace NextAfter.Net
         }
         
         /// <summary>
-        /// Returns the previous representable single number.
+        /// Returns the previous floating-point representable single number.
         /// </summary>
         /// <param name="number">Single number.</param>
         /// <returns>The previous representable single number.</returns>
