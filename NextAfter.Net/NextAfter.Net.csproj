@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <AssemblyVersion>1.0.3.0</AssemblyVersion>
+	  <AssemblyVersion>1.0.4.0</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
     <Version>$(AssemblyVersion)</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -14,7 +14,7 @@
     <Title>NextAfter.Net</Title>
     <Company>Dmitry A. Skorik</Company>
     <Description>Get the nearest single or double number in a specific direction that is representable in floating point arithmetic (the C# equivalent of the C++ 'std::nextafter' method).</Description>
-    <Copyright>Dmitry A. Skorik, 2022</Copyright>
+    <Copyright>Dmitry A. Skorik, 2023</Copyright>
     <PackageProjectUrl>https://github.com/dmorik/NextAfter.Net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dmorik/NextAfter.Net</RepositoryUrl>
     <PackageTags>Math Double Float NextAfter NextAfterF</PackageTags>
