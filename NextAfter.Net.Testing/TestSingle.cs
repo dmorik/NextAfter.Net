@@ -11,7 +11,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(0.0f);
 
-            Assert.IsTrue(result.Equals(float.Epsilon));
+            Assert.That(result, Is.EqualTo(float.Epsilon));
         }
 
         [Test]
@@ -19,7 +19,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(0.0f);
 
-            Assert.IsTrue(result.Equals(-float.Epsilon));
+            Assert.That(result, Is.EqualTo(-float.Epsilon));
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(-float.Epsilon);
 
-            Assert.IsTrue(result < -float.Epsilon);
+            Assert.That(result, Is.LessThan(-float.Epsilon));
         }
         
         [Test]
@@ -35,7 +35,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(float.Epsilon);
 
-            Assert.IsTrue(result.Equals(0.0f));
+            Assert.That(result, Is.EqualTo(0.0f));
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(float.MaxValue);
 
-            Assert.IsTrue(result.Equals(float.PositiveInfinity));
+            Assert.That(result, Is.EqualTo(float.PositiveInfinity));
         }
         
         [Test]
@@ -51,7 +51,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(float.MinValue);
 
-            Assert.IsTrue(result > float.MinValue);
+            Assert.That(result, Is.GreaterThan(float.MinValue));
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(float.MinValue);
 
-            Assert.IsTrue(result.Equals(float.NegativeInfinity));
+            Assert.That(result, Is.EqualTo(float.NegativeInfinity));
         }
         
         [Test]
@@ -67,7 +67,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(float.MaxValue);
 
-            Assert.IsTrue(result < float.MaxValue);
+            Assert.That(result, Is.LessThan(float.MaxValue));
         }
 
         [Test]
@@ -75,7 +75,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(float.NaN);
 
-            Assert.IsTrue(float.IsNaN(result));
+            Assert.That(float.IsNaN(result), Is.True);
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(float.NaN);
 
-            Assert.IsTrue(float.IsNaN(result));
+            Assert.That(float.IsNaN(result), Is.True);
         }
 
         [Test]
@@ -91,7 +91,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(float.PositiveInfinity);
 
-            Assert.IsTrue(float.IsPositiveInfinity(result));
+            Assert.That(float.IsPositiveInfinity(result), Is.True);
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(float.PositiveInfinity);
 
-            Assert.IsTrue(float.IsPositiveInfinity(result));
+            Assert.That(float.IsPositiveInfinity(result), Is.True);
         }
 
         [Test]
@@ -107,7 +107,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Previous.Single(float.NegativeInfinity);
 
-            Assert.IsTrue(float.IsNegativeInfinity(result));
+            Assert.That(float.IsNegativeInfinity(result), Is.True);
         }
 
         [Test]
@@ -115,7 +115,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(float.NegativeInfinity);
 
-            Assert.IsTrue(float.IsNegativeInfinity(result));
+            Assert.That(float.IsNegativeInfinity(result), Is.True);
         }
 
         [Test]
@@ -123,7 +123,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(-float.Epsilon);
 
-            Assert.IsTrue(result.Equals(0.0f));
+            Assert.That(result, Is.EqualTo(0.0f));
         }
         
         [Test]
@@ -131,7 +131,7 @@ namespace NextAfter.Net.Testing
         {
             var result = Next.Single(float.Epsilon);
 
-            Assert.IsTrue(result > float.Epsilon);
+            Assert.That(result, Is.GreaterThan(float.Epsilon));
         }
 
         [Test]
@@ -141,11 +141,11 @@ namespace NextAfter.Net.Testing
             var number = GenerateSingleNumber();
             var result = Previous.Single(number);
 
-            Assert.IsTrue(result < number);
+            Assert.That(result, Is.LessThan(number));
             
             var middle = (number + result) * 0.5f;
             
-            Assert.IsTrue(middle.Equals(number) || middle.Equals(result));
+            Assert.That(middle.Equals(number) || middle.Equals(result), Is.True);
         }
 
         [Test]
@@ -155,11 +155,11 @@ namespace NextAfter.Net.Testing
             var number = GenerateSingleNumber();
             var result = Next.Single(number);
 
-            Assert.IsTrue(result > number);
+            Assert.That(result, Is.GreaterThan(number));
 
             var middle = (number + result) * 0.5f;
             
-            Assert.IsTrue(middle.Equals(number) || middle.Equals(result));
+            Assert.That(middle.Equals(number) || middle.Equals(result), Is.True);
         }
     }
 }
