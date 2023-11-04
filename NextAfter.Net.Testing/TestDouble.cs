@@ -143,7 +143,7 @@ namespace NextAfter.Net.Testing
 
             Assert.That(result, Is.LessThan(number));
             
-            var middle = (number + result) * 0.5;
+            var middle = number * 0.5 + result * 0.5;
             
             Assert.That(middle.Equals(number) || middle.Equals(result), Is.True);
         }
@@ -157,7 +157,7 @@ namespace NextAfter.Net.Testing
 
             Assert.That(result, Is.GreaterThan(number));
 
-            var middle = (number + result) * 0.5;
+            var middle = number * 0.5 + result * 0.5;
             
             Assert.That(middle.Equals(number) || middle.Equals(result), Is.True);
         }

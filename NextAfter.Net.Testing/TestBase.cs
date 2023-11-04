@@ -20,11 +20,7 @@ namespace NextAfter.Net.Testing
 
             var result = BitConverter.ToDouble(bytes);
 
-            while (!double.IsNormal(result)
-                // for middle calculating
-                || result < double.MinValue * 0.5
-                // for middle calculating
-                || result > double.MaxValue * 0.5)
+            while (!double.IsNormal(result))
             {
                 Random.NextBytes(bytes);
 
@@ -42,11 +38,7 @@ namespace NextAfter.Net.Testing
 
             var result = BitConverter.ToSingle(bytes);
 
-            while (!float.IsNormal(result)
-                // for middle calculating
-                || result < float.MinValue * 0.5f
-                // for middle calculating
-                || result > float.MaxValue * 0.5f)
+            while (!float.IsNormal(result))
             {
                 Random.NextBytes(bytes);
 
