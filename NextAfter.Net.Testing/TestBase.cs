@@ -5,34 +5,55 @@ using System;
 
 namespace NextAfter.Net.Testing
 {
+    [Parallelizable(ParallelScope.All)]
     internal class TestBase
     {
         protected const int RepeatCount = (int)1e6;
         
-        private static readonly Random Random = new Random(DateTime.Now.Millisecond);
-        private static readonly double MinDoubleLogValue = Math.Log(double.Epsilon) + 1.0;
-        private static readonly double MaxDoubleLogValue = Math.Log(double.MaxValue) - 1.0;
-        private static readonly float MinSingleLogValue = (float)(Math.Log(float.Epsilon) + 1.0);
-        private static readonly float MaxSingleLogValue = (float)(Math.Log(float.MaxValue) - 1.0);
+        private static readonly Random Random = Random.Shared;
 
-        private static double GenerateNumberByLogInterval(double minLog, double maxLog)
-        {
-            var numberSign = Random.NextDouble() >= 0.5 ? 1.0 : -1.0;
-            var randomNumber = Random.NextDouble();
-            var numberLogValue = minLog * (1.0 - randomNumber) + maxLog * randomNumber;
-            var numberAbsValue = Math.Exp(numberLogValue);
-
-            return numberSign * numberAbsValue;
-        }
-        
         protected static double GenerateDoubleNumber()
         {
-            return GenerateNumberByLogInterval(MinDoubleLogValue, MaxDoubleLogValue);
+            var bytes = new byte[sizeof(double)];
+
+            Random.NextBytes(bytes);
+
+            var result = BitConverter.ToDouble(bytes);
+
+            while (!double.IsNormal(result)
+                // for middle calculating
+                || result < double.MinValue * 0.5
+                // for middle calculating
+                || result > double.MaxValue * 0.5)
+            {
+                Random.NextBytes(bytes);
+
+                result = BitConverter.ToDouble(bytes);
+            }
+
+            return result;
         }
 
         protected static float GenerateSingleNumber()
         {
-            return (float)GenerateNumberByLogInterval(MinSingleLogValue, MaxSingleLogValue);
+            var bytes = new byte[sizeof(float)];
+
+            Random.NextBytes(bytes);
+
+            var result = BitConverter.ToSingle(bytes);
+
+            while (!float.IsNormal(result)
+                // for middle calculating
+                || result < float.MinValue * 0.5f
+                // for middle calculating
+                || result > float.MaxValue * 0.5f)
+            {
+                Random.NextBytes(bytes);
+
+                result = BitConverter.ToSingle(bytes);
+            }
+
+            return result;
         }
     }
 }
